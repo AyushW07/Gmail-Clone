@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Sidebar.module.css";
-import { Button } from "@mui/material";
+import { Button, IconButton } from "@mui/material";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import SidebarOption from "../SidebarOption/SidebarOption";
 import InboxIcon from "@mui/icons-material/Inbox";
@@ -8,6 +8,7 @@ import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 import ExpandMoreSharpIcon from "@mui/icons-material/ExpandMoreSharp";
+import AddSharpIcon from "@mui/icons-material/AddSharp";
 
 function Sidebar() {
   return (
@@ -25,6 +26,13 @@ function Sidebar() {
         number={4}
       />
       <SidebarOption Icon={ExpandMoreSharpIcon} title="More" />
+
+      <div className={styles.labels}>
+        <h3>Labels</h3>
+        <IconButton>
+          <AddSharpIcon className={styles.add_icon} />
+        </IconButton>
+      </div>
     </div>
   );
 }
