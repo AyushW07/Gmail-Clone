@@ -12,7 +12,7 @@
 .SidebarOption:hover,
 .SidebarOption:hover > p,
 .SidebarOption:hover > h3 {
-  background-color: rgb(245, 245, 245);
+  background-color: whitesmoke;
   color: black;
   font-weight: 700 !important;
 }
@@ -28,6 +28,14 @@
   font-weight: 500;
 }
 
-.sidebarOption_active {
+.SidebarOption > p {
+  font-size: 14px;
+  margin-right: 5px;
+}
+
+.sidebarOption_active,
+.sidebarOption_active p,
+.sidebarOption_active h3 {
   background-color: #d3e3fd;
+  font-weight: 700;
 }
