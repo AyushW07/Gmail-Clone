@@ -1,0 +1,42 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #f6f8fc;
+  border-bottom: 1px solid whitesmoke;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+}
+
+.left > img {
+  margin-left: 5px;
+}
+
+.middle {
+  display: flex;
+  flex: 0.7;
+  align-items: center;
+  background-color: #eaf1fb;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+.search_icon {
+  color: #444746;
+}
+
+.middle > input {
+  border: none;
+  background-color: #eaf1fb;
+  width: 100%;
+  padding: 10px;
+}
+
+.right {
+  display: flex;
+  padding-right: 20px;
+}
