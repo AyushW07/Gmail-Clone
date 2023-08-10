@@ -4,7 +4,10 @@ import { Button } from "@mui/material";
 import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import SidebarOption from "../SidebarOption/SidebarOption";
 import InboxIcon from "@mui/icons-material/Inbox";
-import StarIcon from "@mui/icons-material/Star";
+import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
+import AccessTimeIcon from "@mui/icons-material/AccessTime";
+import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
+import ExpandMoreSharpIcon from "@mui/icons-material/ExpandMoreSharp";
 
 function Sidebar() {
   return (
@@ -13,8 +16,15 @@ function Sidebar() {
         Compose
       </Button>
 
-      <SidebarOption Icon={InboxIcon} title="Inbox" number={24} />
-      <SidebarOption Icon={StarIcon} title="Starred" number={2} />
+      <SidebarOption Icon={InboxIcon} title="Inbox" number={24} active={true} />
+      <SidebarOption Icon={StarBorderOutlinedIcon} title="Starred" number={2} />
+      <SidebarOption Icon={AccessTimeIcon} title="Snoozed" number={1} />
+      <SidebarOption
+        Icon={InsertDriveFileOutlinedIcon}
+        title="Drafts"
+        number={4}
+      />
+      <SidebarOption Icon={ExpandMoreSharpIcon} title="More" />
     </div>
   );
 }
