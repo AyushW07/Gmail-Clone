@@ -11,6 +11,7 @@
   color: black !important;
   padding: 18px !important;
   border-radius: 20px !important;
+  text-transform: capitalize !important;
 }
 
 .pencil_icon:hover {
