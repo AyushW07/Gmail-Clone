@@ -7,6 +7,7 @@ import TuneIcon from "@mui/icons-material/Tune";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AppsRoundedIcon from "@mui/icons-material/AppsRounded";
+import { deepOrange } from "@mui/material/colors";
 
 function Navbar() {
   return (
@@ -45,7 +46,12 @@ function Navbar() {
           <AppsRoundedIcon />
         </IconButton>
 
-        <Avatar />
+        <Avatar
+          className={styles.avatar}
+          sx={{ width: 30, height: 30, bgcolor: deepOrange[600] }}
+        >
+          A
+        </Avatar>
       </div>
     </div>
   );

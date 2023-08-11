@@ -12,6 +12,7 @@ import InboxIcon from "@mui/icons-material/Inbox";
 import Section from "../Section/Section";
 import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
+import EmailRow from "../EmailRow/EmailRow";
 
 function EmailList() {
   return (
@@ -54,6 +55,45 @@ function EmailList() {
           color="#0b57d0"
         />
         <Section Icon={PeopleAltOutlinedIcon} title="Social" color="#0b57d0" />
+      </div>
+
+      <div className={styles.lists}>
+        <EmailRow
+          title="Google Forms"
+          subject="Opt-In Form"
+          desc="Thanks for filling out Opt-in form"
+          time="10:00 PM"
+        />
+        <EmailRow
+          title="Google Forms"
+          subject="Opt-In Form"
+          desc="Thanks for filling out Opt-in form"
+          time="10:00 PM"
+        />
+        <EmailRow
+          title="Google Forms"
+          subject="Opt-In Form"
+          desc="Thanks for filling out Opt-in form"
+          time="10:00 PM"
+        />
+        <EmailRow
+          title="Google Forms"
+          subject="Opt-In Form"
+          desc="Thanks for filling out Opt-in form"
+          time="10:00 PM"
+        />
+        <EmailRow
+          title="Google Forms"
+          subject="Opt-In Form"
+          desc="Thanks for filling out Opt-in form"
+          time="10:00 PM"
+        />
+        <EmailRow
+          title="Google Forms"
+          subject="Opt-In Form"
+          desc="Thanks for filling out Opt-in form Thanks for filling out Opt-in form Thanks for filling out Opt-in form Thanks for filling out Opt-in form"
+          time="10:00 PM"
+        />
       </div>
     </div>
   );
