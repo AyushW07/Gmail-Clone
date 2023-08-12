@@ -9,6 +9,7 @@ import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
 import ExpandMoreSharpIcon from "@mui/icons-material/ExpandMoreSharp";
 import AddSharpIcon from "@mui/icons-material/AddSharp";
+import MoreSidebar from "../MoreSidebar/MoreSidebar";
 
 function Sidebar() {
   return (
@@ -25,7 +26,9 @@ function Sidebar() {
         title="Drafts"
         number={4}
       />
-      <SidebarOption Icon={ExpandMoreSharpIcon} title="More" />
+      {/* <SidebarOption Icon={ExpandMoreSharpIcon} title="More" /> */}
+
+      <MoreSidebar />
 
       <div className={styles.labels}>
         <h3>Labels</h3>
