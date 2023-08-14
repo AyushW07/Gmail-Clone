@@ -4,6 +4,9 @@
   justify-content: space-between;
   background-color: #f6f8fc;
   margin-bottom: 15px;
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .left {

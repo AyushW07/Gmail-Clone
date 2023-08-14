@@ -1,0 +1,12 @@
+.Mail {
+  flex: 1;
+  overflow-y: scroll;
+  border-radius: 20px;
+  background-color: white;
+}
+
+.tools {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
