@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Mail.module.css";
-import { IconButton } from "@mui/material";
+import { Avatar, IconButton } from "@mui/material";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import ReportGmailerrorredOutlinedIcon from "@mui/icons-material/ReportGmailerrorredOutlined";
@@ -16,6 +16,8 @@ import KeyboardArrowRightIcon from "@mui/icons-material/KeyboardArrowRight";
 import KeyboardIcon from "@mui/icons-material/Keyboard";
 import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import LabelImportantOutlinedIcon from "@mui/icons-material/LabelImportantOutlined";
+import LocalPrintshopOutlinedIcon from "@mui/icons-material/LocalPrintshopOutlined";
+import LaunchOutlinedIcon from "@mui/icons-material/LaunchOutlined";
 import { useNavigate } from "react-router-dom";
 
 function Mail() {
@@ -84,11 +86,42 @@ function Mail() {
         <div className={styles.subject}>
           <h2>Subject</h2>
           <IconButton>
-            <LabelImportantOutlinedIcon className={styles.imp_icon} />
+            <LabelImportantOutlinedIcon
+              className={styles.imp_icon}
+              fontSize="small"
+            />
           </IconButton>
-          <p></p>
-          <p></p>
+          <p>Title</p>
         </div>
+        <div className={styles.sub_icon}>
+          <IconButton>
+            <LocalPrintshopOutlinedIcon fontSize="small" />
+          </IconButton>
+          <IconButton>
+            <LaunchOutlinedIcon fontSize="small" />
+          </IconButton>
+          <p className={styles.time}>10:00 AM</p>
+        </div>
+      </div>
+
+      <div className={styles.user}>
+        <div className={styles.avatar}>
+          <Avatar />
+        </div>
+        <div className={styles.name}>
+          <h4>Name</h4>
+          <span>to me</span>
+          <IconButton>
+            <ArrowDropDownIcon
+              className={styles.dropArrow_icon}
+              fontSize="small"
+            />
+          </IconButton>
+        </div>
+      </div>
+
+      <div className={styles.message}>
+        <p>Message</p>
       </div>
     </div>
   );
