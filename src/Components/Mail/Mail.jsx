@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Mail.module.css";
-import { Avatar, IconButton } from "@mui/material";
+import { Avatar, Icon, IconButton } from "@mui/material";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import ReportGmailerrorredOutlinedIcon from "@mui/icons-material/ReportGmailerrorredOutlined";
@@ -18,6 +18,8 @@ import ArrowDropDownIcon from "@mui/icons-material/ArrowDropDown";
 import LabelImportantOutlinedIcon from "@mui/icons-material/LabelImportantOutlined";
 import LocalPrintshopOutlinedIcon from "@mui/icons-material/LocalPrintshopOutlined";
 import LaunchOutlinedIcon from "@mui/icons-material/LaunchOutlined";
+import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
+import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import { useNavigate } from "react-router-dom";
 
 function Mail() {
@@ -32,7 +34,10 @@ function Mail() {
       <div className={styles.tools}>
         <div className={styles.left}>
           <IconButton onClick={handleBack}>
-            <ArrowBackOutlinedIcon fontSize="small" />
+            <ArrowBackOutlinedIcon
+              fontSize="small"
+              className={styles.back_icon}
+            />
           </IconButton>
           <IconButton>
             <ArchiveOutlinedIcon fontSize="small" />
@@ -92,6 +97,21 @@ function Mail() {
             />
           </IconButton>
           <p>Title</p>
+          <IconButton>
+            <StarBorderOutlinedIcon
+              fontSize="small"
+              className={styles.star_icon}
+            />
+          </IconButton>
+          <IconButton>
+            <ReplyOutlinedIcon fontSize="small" className={styles.reply_icon} />
+          </IconButton>
+          <IconButton>
+            <MoreVertOutlinedIcon
+              fontSize="small"
+              className={styles.vertMenu_icon}
+            />
+          </IconButton>
         </div>
         <div className={styles.sub_icon}>
           <IconButton>
