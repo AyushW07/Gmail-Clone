@@ -34,10 +34,7 @@ function Mail() {
       <div className={styles.tools}>
         <div className={styles.left}>
           <IconButton onClick={handleBack}>
-            <ArrowBackOutlinedIcon
-              fontSize="small"
-              className={styles.back_icon}
-            />
+            <ArrowBackOutlinedIcon fontSize="small" />
           </IconButton>
           <IconButton>
             <ArchiveOutlinedIcon fontSize="small" />

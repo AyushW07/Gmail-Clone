@@ -1,6 +1,7 @@
 .App {
   height: 100vh;
   background-color: #f6f8fc;
+  overflow: hidden;
 }
 
 .App_body {

@@ -1,0 +1,57 @@
+.Compose {
+  position: absolute;
+  bottom: 0px;
+  right: 30px;
+  background-color: white;
+  width: 40%;
+  height: 65%;
+  max-width: 640px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.5);
+}
+
+.header {
+  background: #f2f6fc;
+  padding: 5px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.header > h4 {
+  font-weight: 500;
+}
+
+.close_icon {
+  font-size: smaller !important;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+form input {
+  height: 30px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid #eceff1;
+  outline: none;
+}
+
+.email_message {
+  flex: 1;
+}
+
+.send_btn {
+  background-color: #0b57d0 !important;
+  color: white !important;
+  text-transform: capitalize !important;
+  margin: 15px !important;
+}

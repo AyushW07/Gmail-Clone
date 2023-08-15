@@ -3,6 +3,7 @@
   overflow-y: scroll;
   border-radius: 20px;
   background-color: white;
+  overflow: auto !important;
 }
 
 .settings {
