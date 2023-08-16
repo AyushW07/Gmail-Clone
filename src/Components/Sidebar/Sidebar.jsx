@@ -7,14 +7,21 @@ import InboxIcon from "@mui/icons-material/Inbox";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import AccessTimeIcon from "@mui/icons-material/AccessTime";
 import InsertDriveFileOutlinedIcon from "@mui/icons-material/InsertDriveFileOutlined";
-import ExpandMoreSharpIcon from "@mui/icons-material/ExpandMoreSharp";
 import AddSharpIcon from "@mui/icons-material/AddSharp";
 import MoreSidebar from "../MoreSidebar/MoreSidebar";
+import { useDispatch } from "react-redux";
+import { openSendMail } from "../../features/mailSlice";
 
 function Sidebar() {
+  const dispatch = useDispatch();
+
   return (
     <div className={styles.sidebar}>
-      <Button startIcon={<EditOutlinedIcon />} className={styles.pencil_icon}>
+      <Button
+        startIcon={<EditOutlinedIcon />}
+        className={styles.pencil_icon}
+        onClick={() => dispatch(openSendMail())}
+      >
         Compose
       </Button>
 
@@ -26,7 +33,6 @@ function Sidebar() {
         title="Drafts"
         number={4}
       />
-      {/* <SidebarOption Icon={ExpandMoreSharpIcon} title="More" /> */}
 
       <MoreSidebar />
 
