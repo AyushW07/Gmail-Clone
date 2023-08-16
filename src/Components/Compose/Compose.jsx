@@ -1,6 +1,14 @@
 import React from "react";
 import styles from "./Compose.module.css";
 import CloseOutlinedIcon from "@mui/icons-material/CloseOutlined";
+import FormatColorTextOutlinedIcon from "@mui/icons-material/FormatColorTextOutlined";
+import AttachFileOutlinedIcon from "@mui/icons-material/AttachFileOutlined";
+import InsertLinkOutlinedIcon from "@mui/icons-material/InsertLinkOutlined";
+import EmojiEmotionsOutlinedIcon from "@mui/icons-material/EmojiEmotionsOutlined";
+import InsertPhotoOutlinedIcon from "@mui/icons-material/InsertPhotoOutlined";
+import LockClockOutlinedIcon from "@mui/icons-material/LockClockOutlined";
+import MoreVertIcon from "@mui/icons-material/MoreVert";
+import DeleteOutlineOutlinedIcon from "@mui/icons-material/DeleteOutlineOutlined";
 import { Button, IconButton } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
@@ -50,6 +58,31 @@ function Compose() {
           >
             Send
           </Button>
+
+          <IconButton>
+            <FormatColorTextOutlinedIcon />
+          </IconButton>
+          <IconButton>
+            <AttachFileOutlinedIcon />
+          </IconButton>
+          <IconButton>
+            <InsertLinkOutlinedIcon />
+          </IconButton>
+          <IconButton>
+            <EmojiEmotionsOutlinedIcon />
+          </IconButton>
+          <IconButton>
+            <InsertPhotoOutlinedIcon />
+          </IconButton>
+          <IconButton>
+            <LockClockOutlinedIcon />
+          </IconButton>
+          <IconButton>
+            <MoreVertIcon />
+          </IconButton>
+          <IconButton className={styles.delete_icon}>
+            <DeleteOutlineOutlinedIcon />
+          </IconButton>
         </div>
       </form>
     </div>

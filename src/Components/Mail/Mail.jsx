@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Mail.module.css";
-import { Avatar, Icon, IconButton } from "@mui/material";
+import { Avatar, IconButton } from "@mui/material";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
 import ArchiveOutlinedIcon from "@mui/icons-material/ArchiveOutlined";
 import ReportGmailerrorredOutlinedIcon from "@mui/icons-material/ReportGmailerrorredOutlined";
@@ -33,7 +33,7 @@ function Mail() {
     <div className={styles.Mail}>
       <div className={styles.tools}>
         <div className={styles.left}>
-          <IconButton onClick={handleBack}>
+          <IconButton onClick={handleBack} className={styles.back_icon}>
             <ArrowBackOutlinedIcon fontSize="small" />
           </IconButton>
           <IconButton>

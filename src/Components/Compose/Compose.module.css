@@ -49,9 +49,17 @@ form input {
   flex: 1;
 }
 
+.send_options svg {
+  font-size: large;
+}
+
 .send_btn {
   background-color: #0b57d0 !important;
   color: white !important;
   text-transform: capitalize !important;
   margin: 15px !important;
+}
+
+.delete_icon {
+  margin-left: 240px;
 }
