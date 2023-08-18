@@ -13,6 +13,9 @@ import { Button, IconButton } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { closeSendMail } from "../../features/mailSlice";
+import { db } from "../../firebase";
+// import firebase from "firebase/app";
+import "firebase/firestore";
 
 function Compose() {
   const { register, handleSubmit, watch } = useForm();
@@ -21,6 +24,19 @@ function Compose() {
 
   const onSubmit = (data) => {
     console.log(data);
+    if (data) {
+      console.log(db);
+      db.collection("emails").add({
+        to: data?.to,
+        subject: data?.subject,
+        message: data?.message,
+        // timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+      });
+
+      dispatch(closeSendMail());
+    } else {
+      alert("Please fill all the fields");
+    }
   };
 
   return (
