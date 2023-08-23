@@ -14,23 +14,22 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { closeSendMail } from "../../features/mailSlice";
 import { db } from "../../firebase";
-// import firebase from "firebase/app";
-import "firebase/firestore";
+import { Timestamp, addDoc, collection } from "firebase/firestore";
 
 function Compose() {
-  const { register, handleSubmit, watch } = useForm();
+  const { register, handleSubmit } = useForm();
 
   const dispatch = useDispatch();
 
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     console.log(data);
+
     if (data) {
-      console.log(db);
-      db.collection("emails").add({
+      const emailCollections = await addDoc(collection(db, "emails"), {
         to: data?.to,
         subject: data?.subject,
         message: data?.message,
-        // timestamp: firebase.firestore.FieldValue.serverTimestamp(),
+        timestamp: Timestamp.now(),
       });
 
       dispatch(closeSendMail());
