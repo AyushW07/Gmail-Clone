@@ -21,9 +21,12 @@ import LaunchOutlinedIcon from "@mui/icons-material/LaunchOutlined";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { selectOpenMail } from "../../features/mailSlice";
 
 function Mail() {
   const navigate = useNavigate();
+  const selectedMail = useSelector(selectOpenMail);
 
   const handleBack = () => {
     navigate("/");
@@ -86,38 +89,44 @@ function Mail() {
 
       <div className={styles.body}>
         <div className={styles.subject}>
-          <h2>Subject</h2>
+          <h2>{selectedMail?.subject}</h2>
           <IconButton>
             <LabelImportantOutlinedIcon
               className={styles.imp_icon}
               fontSize="small"
             />
           </IconButton>
-          <p>Title</p>
-          <IconButton>
-            <StarBorderOutlinedIcon
-              fontSize="small"
-              className={styles.star_icon}
-            />
-          </IconButton>
-          <IconButton>
-            <ReplyOutlinedIcon fontSize="small" className={styles.reply_icon} />
-          </IconButton>
-          <IconButton>
-            <MoreVertOutlinedIcon
-              fontSize="small"
-              className={styles.vertMenu_icon}
-            />
-          </IconButton>
         </div>
         <div className={styles.sub_icon}>
-          <IconButton>
-            <LocalPrintshopOutlinedIcon fontSize="small" />
-          </IconButton>
-          <IconButton>
-            <LaunchOutlinedIcon fontSize="small" />
-          </IconButton>
-          <p className={styles.time}>10:00 AM</p>
+          <div>
+            <IconButton>
+              <LocalPrintshopOutlinedIcon fontSize="small" />
+            </IconButton>
+            <IconButton>
+              <LaunchOutlinedIcon fontSize="small" />
+            </IconButton>
+          </div>
+          <div>
+            <IconButton>
+              <StarBorderOutlinedIcon
+                fontSize="small"
+                className={styles.star_icon}
+              />
+            </IconButton>
+            <IconButton>
+              <ReplyOutlinedIcon
+                fontSize="small"
+                className={styles.reply_icon}
+              />
+            </IconButton>
+            <IconButton>
+              <MoreVertOutlinedIcon
+                fontSize="small"
+                className={styles.vertMenu_icon}
+              />
+            </IconButton>
+          </div>
+          <p className={styles.time}>{selectedMail?.time}</p>
         </div>
       </div>
 
@@ -126,7 +135,7 @@ function Mail() {
           <Avatar />
         </div>
         <div className={styles.name}>
-          <h4>Name</h4>
+          <h4>{selectedMail?.title}</h4>
           <span>to me</span>
           <IconButton>
             <ArrowDropDownIcon
@@ -138,7 +147,7 @@ function Mail() {
       </div>
 
       <div className={styles.message}>
-        <p>Message</p>
+        <p>{selectedMail?.desc}</p>
       </div>
     </div>
   );

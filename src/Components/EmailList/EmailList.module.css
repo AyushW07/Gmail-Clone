@@ -3,7 +3,8 @@
   overflow-y: scroll;
   border-radius: 20px;
   background-color: white;
-  overflow: auto !important;
+  margin-bottom: 75px;
+  padding-bottom: 10px;
 }
 
 .settings {

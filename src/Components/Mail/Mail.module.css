@@ -29,7 +29,6 @@
 .subject {
   display: flex;
   align-items: center;
-  position: relative;
 }
 
 .subject > h2 {
@@ -42,13 +41,15 @@
 }
 
 .sub_icon {
-  padding-top: 10px;
+  padding-top: 5px;
   margin-right: -25px;
+  display: flex;
+  flex-direction: column;
 }
 
 .time {
   position: absolute;
-  top: 225px;
+  top: 241px;
   right: 150px;
   font-size: 12px;
   color: gray;
@@ -57,20 +58,20 @@
 
 .star_icon {
   position: absolute;
-  top: 61px;
-  left: 898px;
+  top: 47px;
+  left: -29px;
 }
 
 .reply_icon {
   position: absolute;
-  top: 61px;
-  left: 918px;
+  top: 47px;
+  left: -8px;
 }
 
 .vertMenu_icon {
   position: absolute;
-  top: 61px;
-  left: 938px;
+  top: 47px;
+  left: 12px;
 }
 
 .user {

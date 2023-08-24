@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styles from "./EmailList.module.css";
 import Checkbox from "@mui/material/Checkbox";
 import { IconButton } from "@mui/material";
@@ -13,8 +13,33 @@ import Section from "../Section/Section";
 import LocalOfferOutlinedIcon from "@mui/icons-material/LocalOfferOutlined";
 import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import EmailRow from "../EmailRow/EmailRow";
+import { collection, getDocs, orderBy, query } from "firebase/firestore";
+import { db } from "../../firebase";
 
 function EmailList() {
+  const [emails, setEmails] = useState([]);
+
+  useEffect(() => {
+    const fetchEmails = async () => {
+      try {
+        const q = query(collection(db, "emails"), orderBy("timestamp", "desc"));
+        const querySnapshot = await getDocs(q);
+
+        const data = querySnapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }));
+
+        setEmails(data);
+        console.log(data);
+      } catch (err) {
+        console.log("error", err);
+      }
+    };
+
+    fetchEmails();
+  }, [emails]);
+
   return (
     <div className={styles.EmailList}>
       <div className={styles.settings}>
@@ -58,119 +83,27 @@ function EmailList() {
       </div>
 
       <div className={styles.lists}>
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
+        {emails.map(({ id, data: { to, subject, message, timestamp } }) => (
+          <EmailRow
+            id={id}
+            key={id}
+            title={to}
+            subject={subject}
+            desc={message}
+            time={new Date(timestamp?.seconds * 1000).toLocaleString()}
+          />
+        ))}
 
         <EmailRow
           title="Google Forms"
           subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form Thanks for filling out Opt-in form Thanks for filling out Opt-in form Thanks for filling out Opt-in form"
+          desc="Thanks for filling out Opt-in form"
+          time="10:00 PM"
+        />
+        <EmailRow
+          title="Google Forms"
+          subject="Opt-In Form"
+          desc="Thanks for filling out Opt-in form"
           time="10:00 PM"
         />
       </div>
