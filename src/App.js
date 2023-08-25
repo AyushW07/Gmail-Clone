@@ -4,7 +4,12 @@ import EmailList from "./Components/EmailList/EmailList";
 import Mail from "./Components/Mail/Mail";
 import Navbar from "./Components/Navbar/Navbar";
 import Sidebar from "./Components/Sidebar/Sidebar";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import { useSelector } from "react-redux";
 import { selectSendMailIsOpen } from "./features/mailSlice";
 import { selectUser } from "./features/userSlice";
@@ -17,9 +22,7 @@ function App() {
 
   return (
     <Router>
-      {!user ? (
-        <Login />
-      ) : (
+      {user ? (
         <div className="App">
           <Navbar />
 
@@ -33,6 +36,11 @@ function App() {
 
           {sendMailIsOpen && <Compose />}
         </div>
+      ) : (
+        <>
+          <Login />
+          {user && <Navigate to="/" replace />}
+        </>
       )}
     </Router>
   );
