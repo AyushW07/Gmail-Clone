@@ -39,7 +39,7 @@ function App() {
       ) : (
         <>
           <Login />
-          {user && <Navigate to="/" replace />}
+          {user && <Navigate to="/" />}
         </>
       )}
     </Router>
