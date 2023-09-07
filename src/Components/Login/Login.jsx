@@ -1,49 +1,29 @@
 import React from "react";
 import styles from "./Login.module.css";
 import GoogleButton from "react-google-button";
-import { auth, provider } from "../../firebase";
+import { provider } from "../../firebase";
 import { useDispatch } from "react-redux";
 import { login } from "../../features/userSlice";
-import { signInWithPopup } from "firebase/auth";
-import { useNavigate } from "react-router-dom";
+import { getAuth, signInWithPopup } from "firebase/auth";
 
 function Login() {
   const dispatch = useDispatch();
 
-  const navigate = useNavigate();
+  const signIn = () => {
+    const auth = getAuth();
+    signInWithPopup(auth, provider)
+      .then((result) => {
+        const user = result.user;
 
-  //   const signIn = () => {
-  //     auth
-  //       .signInWithPopup(provider)
-  //       .then(({ user }) => {
-  //         dispatch(
-  //           login({
-  //             displayName: user.displayName,
-  //             email: user.email,
-  //             photoUrl: user.photoURL,
-  //           })
-  //         );
-  //       })
-  //       .catch((error) => alert(error.message));
-  //   };
-
-  const signIn = async () => {
-    try {
-      const result = await signInWithPopup(auth, provider);
-      const user = result.user;
-      console.log(result);
-
-      dispatch(
-        login({
-          displayName: user.displayName,
-          email: user.email,
-          photoUrl: user.photoURL,
-        })
-      );
-      navigate("/");
-    } catch (error) {
-      alert(error.message);
-    }
+        dispatch(
+          login({
+            displayName: user.displayName,
+            email: user.email,
+            photoUrl: user.photoURL,
+          })
+        );
+      })
+      .catch((error) => alert(error.message));
   };
 
   return (
