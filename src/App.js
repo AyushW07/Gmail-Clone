@@ -19,20 +19,19 @@ function App() {
 
   const dispatch = useDispatch();
 
-  // useEffect(() => {
-  //   auth.onAuthStateChanged((user) => {
-  //     if (user) {
-  //       dispatch(
-  //         login({
-  //           displayName: user.displayName,
-  //           email: user.email,
-  //           photoUrl: user.photoURL,
-  //         })
-  //       );
-  //     } else {
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        dispatch(
+          login({
+            displayName: user.displayName,
+            email: user.email,
+            photoUrl: user.photoURL,
+          })
+        );
+      }
+    });
+  }, []);
 
   return (
     <Router>

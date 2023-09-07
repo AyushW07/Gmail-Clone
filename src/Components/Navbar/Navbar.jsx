@@ -7,8 +7,21 @@ import TuneIcon from "@mui/icons-material/Tune";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AppsRoundedIcon from "@mui/icons-material/AppsRounded";
+import { useDispatch, useSelector } from "react-redux";
+import { logout, selectUser } from "../../features/userSlice";
+import { auth } from "../../firebase";
 
 function Navbar() {
+  const user = useSelector(selectUser);
+
+  const dispatch = useDispatch();
+
+  const signOut = () => {
+    auth.signOut().then(() => {
+      dispatch(logout());
+    });
+  };
+
   return (
     <div className={styles.navbar}>
       <div className={styles.left}>
@@ -46,9 +59,11 @@ function Navbar() {
         </IconButton>
 
         <Avatar
+          onClick={signOut}
+          src={user?.photoUrl}
           className={styles.avatar}
-          sx={{ width: 35, height: 35 }}
-        ></Avatar>
+          sx={{ width: 33, height: 33 }}
+        />
       </div>
     </div>
   );
