@@ -26,7 +26,7 @@ function EmailRow({ title, subject, desc, time }) {
   };
 
   return (
-    <div onClick={openMail} className={styles.EmailRow}>
+    <div className={styles.EmailRow}>
       <div className={styles.options}>
         <Checkbox />
         <IconButton>
@@ -37,16 +37,18 @@ function EmailRow({ title, subject, desc, time }) {
         </IconButton>
       </div>
 
-      <h3 className={styles.title}>{title}</h3>
+      <div className={styles.Emails} onClick={openMail}>
+        <h3 className={styles.title}>{title}</h3>
 
-      <div className={styles.message}>
-        <h4>
-          {subject} &nbsp;
-          <span className={styles.desc}>- {desc}</span>
-        </h4>
+        <div className={styles.message}>
+          <h4>
+            {subject} &nbsp;
+            <span className={styles.desc}>- {desc}</span>
+          </h4>
+        </div>
+
+        <p className={styles.time}>{time}</p>
       </div>
-
-      <p className={styles.time}>{time}</p>
     </div>
   );
 }
