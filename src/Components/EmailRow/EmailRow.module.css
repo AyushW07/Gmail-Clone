@@ -24,11 +24,7 @@
 .Emails {
   display: flex;
   align-items: center;
-  /* height: 50px; */
-  /* padding-left: 10px; */
-  /* border-bottom: 1px solid whitesmoke; */
   cursor: pointer;
-  z-index: 999;
   width: 100%;
 }
 
