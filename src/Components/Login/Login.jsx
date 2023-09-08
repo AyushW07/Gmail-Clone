@@ -30,7 +30,7 @@ function Login() {
     <div className={styles.login}>
       <div className={styles.container}>
         <img
-          src="https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_1x_r5.png"
+          src="https://static.dezeen.com/uploads/2020/10/gmail-google-logo-rebrand-workspace-design_dezeen_2364_col_0.jpg"
           alt="Gmail"
         />
       </div>
