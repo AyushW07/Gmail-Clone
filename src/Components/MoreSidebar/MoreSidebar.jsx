@@ -29,11 +29,7 @@ function MoreSidebar() {
       <List sx={{ width: "100%", maxWidth: 360 }}>
         <ListItemButton onClick={handleClick}>
           {open ? <ExpandLess /> : <ExpandMore />}
-          <ListItemText
-            primary="More"
-            // sx={{ fontWeight: "700" }}
-            className={styles.more}
-          />
+          <ListItemText primary="More" className={styles.more} />
         </ListItemButton>
         <Collapse in={open} timeout="auto" unmountOnExit>
           <List component="div" disablePadding>

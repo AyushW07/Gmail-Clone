@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./Mail.module.css";
 import { Avatar, IconButton } from "@mui/material";
 import ArrowBackOutlinedIcon from "@mui/icons-material/ArrowBackOutlined";
@@ -19,6 +19,7 @@ import LabelImportantOutlinedIcon from "@mui/icons-material/LabelImportantOutlin
 import LocalPrintshopOutlinedIcon from "@mui/icons-material/LocalPrintshopOutlined";
 import LaunchOutlinedIcon from "@mui/icons-material/LaunchOutlined";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
+import StarIcon from "@mui/icons-material/Star";
 import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
@@ -30,6 +31,12 @@ function Mail() {
 
   const handleBack = () => {
     navigate("/");
+  };
+
+  const [isClicked, setIsClicked] = useState(false);
+
+  const toggleStar = () => {
+    setIsClicked(!isClicked);
   };
 
   return (
@@ -98,7 +105,7 @@ function Mail() {
           </IconButton>
         </div>
         <div className={styles.sub_icon}>
-          <div>
+          <div className={styles.icons}>
             <IconButton>
               <LocalPrintshopOutlinedIcon fontSize="small" />
             </IconButton>
@@ -106,26 +113,23 @@ function Mail() {
               <LaunchOutlinedIcon fontSize="small" />
             </IconButton>
           </div>
+
           <div>
-            <IconButton>
-              <StarBorderOutlinedIcon
-                fontSize="small"
-                className={styles.star_icon}
-              />
+            <IconButton onClick={toggleStar} className={styles.star_icon}>
+              {isClicked ? (
+                <StarIcon fontSize="small" style={{ color: "#f7ca4c" }} />
+              ) : (
+                <StarBorderOutlinedIcon fontSize="small" />
+              )}
             </IconButton>
-            <IconButton>
-              <ReplyOutlinedIcon
-                fontSize="small"
-                className={styles.reply_icon}
-              />
+            <IconButton className={styles.reply_icon}>
+              <ReplyOutlinedIcon fontSize="small" />
             </IconButton>
-            <IconButton>
-              <MoreVertOutlinedIcon
-                fontSize="small"
-                className={styles.vertMenu_icon}
-              />
+            <IconButton className={styles.vertMenu_icon}>
+              <MoreVertOutlinedIcon fontSize="small" />
             </IconButton>
           </div>
+
           <p className={styles.time}>{selectedMail?.time}</p>
         </div>
       </div>

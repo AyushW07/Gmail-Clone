@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import styles from "./EmailRow.module.css";
 import Checkbox from "@mui/material/Checkbox";
 import { IconButton } from "@mui/material";
 import StarBorderOutlinedIcon from "@mui/icons-material/StarBorderOutlined";
+import StarIcon from "@mui/icons-material/Star";
 import LabelImportantOutlinedIcon from "@mui/icons-material/LabelImportantOutlined";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
@@ -25,12 +26,22 @@ function EmailRow({ title, subject, desc, time }) {
     navigate("/mail");
   };
 
+  const [isClicked, setIsClicked] = useState(false);
+
+  const toggleStar = () => {
+    setIsClicked(!isClicked);
+  };
+
   return (
     <div className={styles.EmailRow}>
       <div className={styles.options}>
         <Checkbox />
-        <IconButton>
-          <StarBorderOutlinedIcon />
+        <IconButton onClick={toggleStar}>
+          {isClicked ? (
+            <StarIcon style={{ color: "#f7ca4c" }} />
+          ) : (
+            <StarBorderOutlinedIcon />
+          )}
         </IconButton>
         <IconButton>
           <LabelImportantOutlinedIcon />

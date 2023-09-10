@@ -6,10 +6,11 @@
 }
 
 .pencil_icon {
-  margin: 15px 0 15px 10px !important;
+  margin: 0 0 15px 10px !important;
   background-color: #c2e7ff !important;
   color: black !important;
   padding: 18px !important;
+  width: 145px !important;
   border-radius: 20px !important;
   text-transform: capitalize !important;
 }
