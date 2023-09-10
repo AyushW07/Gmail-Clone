@@ -15,6 +15,7 @@ import PeopleAltOutlinedIcon from "@mui/icons-material/PeopleAltOutlined";
 import EmailRow from "../EmailRow/EmailRow";
 import { collection, getDocs, orderBy, query } from "firebase/firestore";
 import { db } from "../../firebase";
+import Tooltip from "@mui/material/Tooltip";
 
 function EmailList() {
   const [emails, setEmails] = useState([]);
@@ -43,16 +44,22 @@ function EmailList() {
     <div className={styles.EmailList}>
       <div className={styles.settings}>
         <div className={styles.left}>
-          <Checkbox />
-          <IconButton className={styles.left_arrowDropIcon}>
-            <ArrowDropDownIcon />
-          </IconButton>
-          <IconButton>
-            <RefreshIcon />
-          </IconButton>
-          <IconButton>
-            <MoreVertIcon />
-          </IconButton>
+          <Tooltip title="Select">
+            <Checkbox />
+            <IconButton className={styles.left_arrowDropIcon}>
+              <ArrowDropDownIcon />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="Refresh">
+            <IconButton>
+              <RefreshIcon />
+            </IconButton>
+          </Tooltip>
+          <Tooltip title="More">
+            <IconButton>
+              <MoreVertIcon />
+            </IconButton>
+          </Tooltip>
         </div>
 
         <div className={styles.right}>
@@ -97,12 +104,6 @@ function EmailList() {
           title="Google Forms"
           subject="Opt-In Form"
           desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
-        />
-        <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form Thanks for filling out Opt-in form Thanks for filling out Opt-in form Thanks for filling out Opt-in form"
           time="10:00 PM"
         />
       </div>

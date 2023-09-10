@@ -44,7 +44,7 @@ function EmailRow({ title, subject, desc, time }) {
           )}
         </IconButton>
         <IconButton>
-          <LabelImportantOutlinedIcon />
+          <LabelImportantOutlinedIcon style={{ color: "#f7ca4c" }} />
         </IconButton>
       </div>
 
