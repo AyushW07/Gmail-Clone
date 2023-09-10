@@ -22,8 +22,18 @@
   font-size: 20px !important;
 }
 
+.left_arrowDropIcon {
+  position: relative;
+  right: 15px;
+}
+
 .right svg {
   font-size: 20px !important;
+}
+
+.right_arrowDropIcon {
+  position: relative;
+  right: 15px;
 }
 
 .sections {

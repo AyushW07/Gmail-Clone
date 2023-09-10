@@ -44,7 +44,7 @@ function EmailList() {
       <div className={styles.settings}>
         <div className={styles.left}>
           <Checkbox />
-          <IconButton>
+          <IconButton className={styles.left_arrowDropIcon}>
             <ArrowDropDownIcon />
           </IconButton>
           <IconButton>
@@ -65,7 +65,7 @@ function EmailList() {
           <IconButton>
             <KeyboardIcon />
           </IconButton>
-          <IconButton>
+          <IconButton className={styles.right_arrowDropIcon}>
             <ArrowDropDownIcon />
           </IconButton>
         </div>

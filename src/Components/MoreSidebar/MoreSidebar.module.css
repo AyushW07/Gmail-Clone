@@ -2,10 +2,15 @@
   background-color: #f6f8fc;
 }
 
+.MoreSidebar svg {
+  font-size: larger;
+  padding: 5px !important;
+}
+
 .more {
   margin-left: 19px;
 }
 
 .moreOption {
-  margin-left: -14px;
+  margin-left: -9px;
 }
