@@ -1,6 +1,6 @@
 # Gmail Clone
 
-This is a full-stack Gmail clone project built using React and Firebase. The project aims to replicate some of the core features of the Gmail application, providing users with the ability to send and receive emails, and user authentication. The project utilizes React for the front-end, Firebase for authentication and database, Redux for state management and CSS for styling.
+This is a full-stack Gmail clone project built using React and Firebase. The project aims to replicate some of the core features of the Gmail application, providing users with the ability to send and receive emails, and user authentication. The project utilizes React for the front-end, Firebase for authentication and database, Redux for state management and CSS Modules for styling.
 
 ## Demo
 
