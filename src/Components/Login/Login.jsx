@@ -5,6 +5,7 @@ import { provider } from "../../firebase";
 import { useDispatch } from "react-redux";
 import { login } from "../../features/userSlice";
 import { getAuth, signInWithPopup } from "firebase/auth";
+import Gmail from "./Gmail.png";
 
 function Login() {
   const dispatch = useDispatch();
@@ -29,10 +30,7 @@ function Login() {
   return (
     <div className={styles.login}>
       <div className={styles.container}>
-        <img
-          src="https://static.dezeen.com/uploads/2020/10/gmail-google-logo-rebrand-workspace-design_dezeen_2364_col_0.jpg"
-          alt="Gmail"
-        />
+        <img src={Gmail} alt="Gmail" />
       </div>
       <GoogleButton onClick={signIn} />
     </div>

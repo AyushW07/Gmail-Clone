@@ -14,4 +14,5 @@
 .container img {
   height: 120px;
   width: 240px;
+  mix-blend-mode: color-burn;
 }
