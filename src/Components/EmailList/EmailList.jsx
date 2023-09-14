@@ -101,10 +101,10 @@ function EmailList() {
         ))}
 
         <EmailRow
-          title="Google Forms"
-          subject="Opt-In Form"
-          desc="Thanks for filling out Opt-in form"
-          time="10:00 PM"
+          title="Compose"
+          subject="Send New Mail"
+          desc="Now, you can create and send emails, just click on Compose button and write your mail and press Send button."
+          time="10:00 AM"
         />
       </div>
     </div>
